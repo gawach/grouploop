@@ -1,0 +1,46 @@
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	/*clear: both;*/
+	background: #000;	/*背景色*/
+	color: #fff;		/*文字色*/
+ width:1440px;
+}
+footer a {
+	color: #fff;
+}
+footer a:hover {
+	color: #fff;
+}
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+
+/*フッターメニュー
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+#footermenu {
+	width: 960px;	/*幅*/
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 20px;
+}
+/*１行分の設定*/
+#footermenu ul {
+	float: left;	/*左に回り込み*/
+	width: 18%;		/*幅。今回は５列作ったのでここの幅18%と下のpaddingの2%でトータル20%になるよう設定。列に応じて調整して下さい。*/
+	padding-right: 2%;
+}
+
+/*コピーライト
+---------------------------------------------------------------------------*/
+#copyright {
+	/* clear: both; */
+	text-align: center;
+	background: #222;	/*背景色*/
+}
+#copyright a {
+	text-decoration: none;
+}

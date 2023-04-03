@@ -1,0 +1,33 @@
+.title {
+
+
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding-top: .3em;
+    padding-bottom: .3em;
+    padding-left: .5em;
+    padding-right: .9em;
+    margin-bottom: 2em;
+    background-color: #f7f7f7;/* 背景色 */
+    border-left: 5px solid #000000;/* 左の線 */
+    border-bottom: 2px solid #cccccc;/* 下の線 */
+    color: #318496;/* フォント色 */
+
+    position:absolute;
+      left:100px;
+      top:125px;
+  }
+.insert{
+  position:absolute;
+    left:480px;
+    top:140px;
+}
+.bbtn {
+  color: #000000;
+  background-color:white;
+}
+footer{
+	position: absolute;
+  left:-50px;
+  top:600px;
+}

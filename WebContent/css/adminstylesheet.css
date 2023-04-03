@@ -1,0 +1,40 @@
+body {
+    width: 1440px;
+}
+
+
+header {
+    background-color: #dd7200;
+    height: 100px;
+    margin-top: 0;
+
+}
+
+.header {
+    display: inline-block;
+
+}
+
+.header-list {
+    display: inline-block;
+}
+
+.header-mark {
+    margin-top: 0;
+    padding: 10px 0 10px 30px;
+    font-size: 50px;
+    display: inline-block;
+    color: white;
+}
+
+
+.header-list ul li {
+    margin-right: 100px;
+    display: inline-block;
+    list-style: none;
+    color: white;
+}
+
+#user {
+    font-size: 30px;
+}

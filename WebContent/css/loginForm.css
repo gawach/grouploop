@@ -1,0 +1,87 @@
+.main {
+    width: 850px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.form {
+    width: 850px;
+    margin: 10px 120px;
+}
+
+.form p {
+    font-size: 30px;
+}
+
+.form input {
+    width: 280px;
+    height: 20px;
+}
+
+.form-control-a {
+    display: inline-block;
+    margin-right: 180px;
+}
+
+.form-control-b {
+    display: inline-block;
+    margin-right: 125px;
+}
+
+input.form-submit {
+    height: 60px;
+    width: 100px;
+    margin: 40px 250px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: white;
+    color: white;
+}
+
+header .administrator{
+  position:relative;
+  left:35%;
+}
+
+
+.form1 {
+    width: 850px;
+    margin: 10px 390px;
+}
+
+.form1 p {
+    font-size: 30px;
+}
+
+.form1 input {
+    width: 280px;
+    height: 20px;
+}
+
+.form-control-a {
+    display: inline-block;
+    margin-right: 180px;
+}
+
+.form-control-b {
+    display: inline-block;
+    margin-right: 125px;
+}
+
+input.form-submit {
+    height: 60px;
+    width: 100px;
+    margin: 40px 250px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: black;
+    color: black;
+}
+
+img{
+  height:300px;
+}

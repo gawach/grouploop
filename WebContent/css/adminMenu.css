@@ -1,0 +1,48 @@
+.option{
+  position:relative;
+  top:100px;
+  left:35%;
+}
+  button.btn_02 {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	background: #dd7200;
+  	border: 1px solid black;
+  	box-sizing: border-box;
+  	width: 100%;
+  	height: 100px;
+  	padding: 0 6% 0 12%;
+  	color: black;
+  	font-size: 20px;
+    font-weight: bold;
+  	text-decoration: none;
+  	position: relative;
+  	transition-duration: 0.2s;
+  	bottom: 10px;
+    width:400px;
+    text-align: center;
+  }
+
+  button.btn_02:hover {
+  	background: black;
+  	color: #fff;
+  }
+
+  button.btn_02:before {
+  	content: "";
+  	display: inline-block;
+  	width: 0;
+  	height: 0;
+  	border-style: solid;
+  	border-width: 7px 0 7px 8px;
+  	border-color: transparent transparent transparent black;
+  	position: absolute;
+  	top: 50%;
+  	left: 6%;
+  	margin-top: -7px;
+  }
+
+  button.btn_02:hover:before {
+  	border-color: transparent transparent transparent #fff;
+  }

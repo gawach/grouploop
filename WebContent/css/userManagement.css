@@ -1,0 +1,65 @@
+
+.maintable{
+  width:100%;
+
+}
+table.table{
+  height:80%;
+  width:85%;
+}
+
+.table{
+  table-layout: fixed;
+  margin-bottom: 1rem;
+}
+
+.table{
+  margin:0 100px;
+  position:absolute;
+    top:195px;
+}
+.table th.table td{
+  padding-top: 0.75rem;
+      padding-right: 0.75rem;
+      padding-bottom: 0.75rem;
+      padding-left: 0.75rem;
+
+}
+.table tr:nth-child(odd){
+  background-color: #f1f1f1
+}
+
+.title {
+  font-size: 1.5em;/* フォントサイズ */
+  font-weight: bold;/* フォント太さ */
+  padding-top: .3em;
+  padding-bottom: .3em;
+  padding-left: .5em;
+  padding-right: .9em;
+  margin-bottom: 2em;
+  background-color: #f7f7f7;/* 背景色 */
+  border-left: 5px solid #000000;/* 左の線 */
+  border-bottom: 2px solid #cccccc;/* 下の線 */
+  color: #318496;/* フォント色 */
+
+  position:absolute;
+    left:100px;
+    top:125px;
+}
+.page{
+  position: absolute;
+  bottom:10px;
+  margin:auto;
+}
+
+footer2 {
+	position: absolute;
+  left:570px;
+  top:860px;
+}
+
+footer{
+	position: absolute;
+  left:-50px;
+  top:900px;
+}

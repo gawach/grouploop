@@ -1,0 +1,75 @@
+
+.title {
+
+
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding-top: .3em;
+    padding-bottom: .3em;
+    padding-left: .5em;
+    padding-right: .9em;
+    margin-bottom: 2em;
+    background-color: #f7f7f7;/* 背景色 */
+    border-left: 5px solid #000000;/* 左の線 */
+    border-bottom: 2px solid #cccccc;/* 下の線 */
+    color: #318496;/* フォント色 */
+
+    position:absolute;
+      left:100px;
+      top:125px;
+  }
+
+
+.table{
+  position:absolute;
+    top:200px;
+    left:90px;
+}
+
+.table th{
+  height:100px
+}
+
+.table tr{
+   height: 100px
+}
+
+.table .image{
+  width:20%;
+}
+
+.table .name{
+  width:20%;
+}
+
+.table .birthDate{
+  width: 20%;
+}
+
+.table .hobby{
+  width: 25%;
+}
+
+.deleteCheck{
+  position:relative;
+  top:340px;
+   left:-60px;
+  font-size: 25px;
+  text-align: center;
+}
+.deleteCheck2{
+  position:relative;
+  top:340px;
+   left:600px;
+
+}
+li{
+  list-style: none;
+  display: inline-block;
+}
+
+footer{
+	position: absolute;
+  left:-50px;
+  top:600px;
+}

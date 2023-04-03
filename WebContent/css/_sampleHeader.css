@@ -1,0 +1,42 @@
+.header {
+  height: 110px;
+}
+
+#navbarNavbar {
+  padding: 10px 20px;
+}
+
+img#logo-img {
+  width: 100px;
+  height: 100px;
+}
+
+h1#header-title {
+  color: white;
+  font-family: fantasy;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+.navbar-toggler-icon{
+  /* 三本線 */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler{
+  /* 枠線 */
+  border-color: rgb(0, 0, 0);
+}
+
+.navbar-brand{
+  /* サイトタイトル */
+  color: rgb(238, 204, 140);
+}
+
+.main {
+  width: 1440px;
+  height: 250px;
+}
+
+#navlist {
+  color: black;
+}

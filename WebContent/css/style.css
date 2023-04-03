@@ -1,0 +1,800 @@
+@charset "utf-8";
+
+
+/*PC・タブレット・スマホ共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Google Fontsの読み込み。#main h2と左メニューの英語表記（.submenu li span）に使っています。
+---------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #000000;	/*全体の文字色*/
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 14px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	background: #ffffff;	/*背景色*/
+	-webkit-text-size-adjust: none;
+	margin: 0 auto;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;}
+ul {list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #000000;	/*リンクテキストの色*/
+	-webkit-transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+	transition: 0.5s;			/*同上*/
+	text-decoration: none;
+}
+a:hover {
+	color: #e95464;
+	text-decoration: none;		/*マウスオン時にリンクの下線を消す設定*/
+}
+
+/*container（フッター以外のブロックを囲む一番外側のブロック）
+---------------------------------------------------------------------------*/
+#container {
+	width: 1000px;	/*幅*/
+	margin: 40px auto;
+}
+
+/*header（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+header {
+
+}
+/*ロゴ画像*/
+#logo {
+}
+
+/*contents（main,subを囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	padding-top: 40px;	/*コンテンツ上に空ける余白*/
+}
+
+/*mainimg（トップページのメイン画像）
+---------------------------------------------------------------------------*/
+#mainimg {
+	padding-bottom: 40px;
+}
+
+/*メインコンテンツ
+---------------------------------------------------------------------------*/
+#main {
+/*	float: right;	/*右側に回り込み*/
+	width: 1000px;	/*幅*/
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+.c1 #main {
+	float: none;
+	width: auto;
+}
+/*mainコンテンツのh2タグの設定*/
+#main h2 {
+	clear: both;
+	margin-bottom: 20px;
+	padding-left: 15px;
+	line-height: 1.2;
+	border-bottom: 4px solid #000;	/*下線の幅、線種、色*/
+	font-family: 'Anton', sans-serif;	/*フォント種類*/
+	font-size: 36px;		/*文字サイズ*/
+}
+/*mainコンテンツのh3タグの設定*/
+#main h3 {
+	clear: both;
+	margin-bottom: 20px;
+	padding: 3px 12px;
+	border: 1px solid #fff;	/*枠線の幅、線種、色*/
+	border-radius: 4px;			/*角丸のサイズ*/
+	background: #000;	/*背景色*/
+}
+/*mainコンテンツの段落タグ設定*/
+#main p {
+	padding: 0px 15px 20px;	/*上、左右、下への余白*/
+}
+#main h2 + p,
+#main h3 + p {
+	margin-top: -5px;
+}
+
+/*メインコンテンツ内のボックス（list）設定
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+#main .list {
+	float: left;	/*左に回り込み*/
+	width: 46%;		/*幅*/
+	overflow: auto;
+	margin-left: 2.5%;	/*ボックス同士の左右間の余白*/
+	margin-bottom: 35px;	/*ボックス同士の上下間の余白*/
+	background: #000;		/*背景色*/
+	color: #fff;	/*文字色*/
+	border: 1px solid #000;	/*枠線の幅、線種、色*/
+	border-radius: 3px;		/*角丸のサイズ。この行削除すれば通常の長方形になる。*/
+	height: 430px;			/*(CMS専用)*/
+	height: 400px;			/*高さ（下の「#main .list a」の高さと揃える）*/
+	line-height: 1.4;
+	position: relative;
+}
+#main .list a {
+	display: block;
+	overflow: auto;
+	text-decoration: none;
+	color: #fff;	/*文字色（ボックスにリンク指定がされた場合に適用される）*/
+	height: 430px;	/*(CMS専用)*/
+	height: 400px;	/*高さ（上の「#main .list」の高さと揃える）*/
+}
+#main .list a:hover {
+	background: #fff;	/*マウスオン時の背景色*/
+	color: #000;		/*マウスオン時の文字色*/
+}
+/*ボックスにリンク指定がされた場合に出る「→」マーク*/
+#main .list a::before {
+	content: "→";	/*この文字を出す。他の文字に変えても可だが機種依存文字は化けるので使わない。*/
+	position: absolute;
+	right: 20px;	/*ボックスの右から20pxの場所に配置*/
+	top: 20px;		/*ボックスの上から20pxの場所に配置*/
+	background: #000;	/*背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.5);	/*rgb指定での背景色。「0,0,0」は黒の事で「0.5」が透明度50%の事。*/
+	color: #fff;	/*文字色*/
+	border: 1px solid #fff;	/*枠線の幅、線種、色*/
+	border-radius: 4px;		/*角丸のサイズ*/
+	width: 30px;		/*幅*/
+	line-height: 30px;	/*高さ*/
+	text-align: center;
+}
+#main .list a:hover::before {
+	background: #000;	/*マウスオン時の「→」マークの背景色*/
+}
+/*ボックス内の画像設定*/
+#main .list .img {
+	width: 100%;
+	height: 220px;
+	padding-bottom: 10px;	/*画像下に空ける余白*/
+}
+/*ボックス内のh4（見出し）タグ設定*/
+#main .list h4 {
+	padding-left: 15px;
+	padding-bottom: 5px;
+	font-size: 16px;	/*文字サイズ*/
+}
+/*ボックス内のp（段落）タグ設定*/
+#main .list p {
+	font-size: 12px;	/*文字サイズを少し小さく*/
+}
+
+/*一覧ページの各物件ボックス内のテーブル（CMS用）
+---------------------------------------------------------------------------*/
+#main .list table {
+	font-size: 10px;	/*文字サイズ*/
+	margin: 0px 15px 5px;
+}
+#main .list table,
+#main .list table td,
+#main .list table th{
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+}
+#main .list table td,
+#main .list table th{
+	padding: 1%;	/*テーブル内の余白*/
+}
+/*色のついた見出しブロック*/
+#main .list table th{
+	width: 18%;		/*幅*/
+	text-align: center;		/*文字をセンタリング*/
+	font-weight: normal;	/*デフォルトの太字を標準にする設定*/
+}
+/*白い説明用ブロック*/
+#main .list table td {
+	width: 31%;	/*幅*/
+}
+
+/*サブコンテンツ
+---------------------------------------------------------------------------*/
+#sub {
+	float: left;	/*左に回り込み*/
+	width: 260px;	/*幅*/
+	padding-bottom: 50px;
+}
+.c1 #sub {
+	display: none;
+}
+/*subコンテンツ内のh2タグ設定*/
+#sub h2 {
+	font-size: 100%;
+	margin-bottom: 15px;
+}
+/*subコンテンツのh2タグの１文字目への設定*/
+#sub h2::first-letter {
+	border-left: 3px solid #ffcc1c;	/*左側のアクセント用ラインの幅、線種、色*/
+	padding-left: 10px;
+}
+
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+#menubar {
+	margin-bottom: 50px;
+}
+/*メニュー全体の設定*/
+.submenu {
+	margin-bottom: 15px;	/*メニューブロックの下に空けるスペース*/
+	border-top: solid 2px #fff;	/*上の線の線種、幅、色*/
+
+}
+/*メニュー１個ごとの設定*/
+.submenu li {
+	border-bottom: solid 2px #fff;	/*下の線の線種、幅、色*/
+	padding: 10px 0px;
+	-webkit-transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+	transition: 0.5s;			/*同上*/
+}
+.submenu li a {
+	text-decoration: none;
+	display: block;
+	width: auto;
+	line-height: 30px;
+}
+#menubar .submenu .menuimg {
+	font-size: 12px;	/*画像入りのメニュー内で使っている日本語の文字サイズ。少し小さめに設定。*/
+}
+/*マウスオン時*/
+.submenu li:hover {
+	background: #000;	/*背景色*/
+}
+/*spanで囲まれた英語表記のテキスト設定*/
+.submenu li span {
+	font-family: 'Anton', sans-serif;	/*フォント種類*/
+	font-size: 28px;		/*文字サイズ*/
+	display: block;
+	padding-top: 2px;
+}
+/*メニュー左側の装飾画像の設定*/
+.menuimg a {
+	width: 60px;	/*幅*/
+	height: 60px;	/*高さ*/
+	display: inline-block;
+	/*background-image: url(../images/menu_bg.png);	/*背景画像の読み込み*/
+	background-repeat: no-repeat;
+	background-size: 60px 240px;	/*背景画像のサイズ。※実寸は120pxと480pxだが、高解像度の端末用に50%のサイズで指定している。*/
+	padding-left: 70px;	/*装飾画像とメニューテキストが重ならないようにメニューテキストの左側に余白を空ける*/
+}
+/*１つ目画像*/
+.menu1 a {
+	background-position: 0 0;	/*装飾画像の左から0px、上から0pxの部分を読み込む指定*/
+}
+/*２つ目画像*/
+.menu2 a {
+	background-position: 0 -60px;	/*装飾画像の左から0px、上から60px（※マイナス記号をつける）の部分を読み込む指定*/
+}
+/*３つ目画像*/
+.menu3 a {
+	background-position: 0 -120px;	/*装飾画像の左から0px、上から120px（※マイナス記号をつける）の部分を読み込む指定*/
+}
+/*４つ目画像*/
+.menu4 a {
+	background-position: 0 -180px;	/*装飾画像の左から0px、上から180px（※マイナス記号をつける）の部分を読み込む指定*/
+}
+/*スマホ用メニューを表示させない*/
+#menubar-s {
+	display: none;
+}
+/*３本バーアイコンを表示させない*/
+#menubar_hdr {
+	display: none;
+}
+
+/*PAGE TOP設定
+---------------------------------------------------------------------------*/
+#pagetop a {
+	clear: both;
+	color: #FFF;		/*文字色*/
+	font-size: 20px;	/*文字サイズ*/
+	background: #000;	/*背景色*/
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	float: right;
+	width: 60px;		/*幅*/
+	line-height: 60px;	/*高さ*/
+}
+/*マウスオン時*/
+#pagetop a:hover {
+	background-color: #999;	/*背景色*/
+	color: #FFF;			/*文字色*/
+}
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	background: #000;	/*背景色*/
+	color: #fff;		/*文字色*/
+}
+footer a {
+	color: #fff;
+}
+footer a:hover {
+	color: #fff;
+}
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+
+/*フッターメニュー
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+#footermenu {
+	width: 960px;	/*幅*/
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 20px;
+}
+/*１行分の設定*/
+#footermenu ul {
+	float: left;	/*左に回り込み*/
+	width: 18%;		/*幅。今回は５列作ったのでここの幅18%と下のpaddingの2%でトータル20%になるよう設定。列に応じて調整して下さい。*/
+	padding-right: 2%;
+}
+
+/*コピーライト
+---------------------------------------------------------------------------*/
+#copyright {
+	clear: both;
+	text-align: center;
+	background: #222;	/*背景色*/
+}
+#copyright a {
+	text-decoration: none;
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl{
+	padding-left: 15px;
+	margin-bottom: 15px;
+	height: 150px;	/*高さ*/
+	overflow: auto;	/*高さの設定を超えるとスクロールが自動で出る設定。全部表示させていたいならこの行と上の行を削除。*/
+}
+/*日付設定*/
+#new dt {
+	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
+	float: left;
+	width: 8em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 8em;
+}
+
+/*テーブル
+---------------------------------------------------------------------------*/
+/*ta1設定*/
+.ta1 {
+	width: 100%;
+	margin-bottom: 20px;
+	border-top: 2px solid #000;
+}
+.list .ta1 {
+	margin-bottom: 0;
+}
+.ta1 td, .ta1 th {
+	border-bottom: 1px solid #000;
+	padding: 10px;	/*ボックス内の余白*/
+	word-break: break-all;
+}
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: left;	/*左よせ*/
+	background: #333;	/*背景色*/
+	color: #fff;		/*文字色*/
+	border-right: none;
+}
+/*ta1の左側ボックス*/
+.ta1 th {
+	width: 140px;	/*幅*/
+	text-align: right;
+	border-right: 1px dashed #000;	/*右側の線の幅、線種、色*/
+}
+/*ta1の右側ボックス*/
+.ta1 td {
+}
+
+/*よく頂く質問・リンク共通設定
+---------------------------------------------------------------------------*/
+/*ブロック全体*/
+.faq,
+.link {
+	padding: 0px 15px;	/*上下、左右への余白*/
+}
+/*質問の設定*/
+.faq dt,
+.link dt {
+	color: #ffcc1c;	/*文字色*/
+	font-weight: bold;	/*太字*/
+}
+.faq dt a,
+.link dt a {
+	color: #ffcc1c;
+}
+/*回答の設定*/
+.faq dd,
+.link dd {
+	padding-bottom: 15px;
+}
+
+/*一覧ページのボックス右下のオプションマーク
+（CMSの場合は管理ページの「オプション1」～のプルダウンと、setup.phpの「オプション選択肢」に関連します）
+---------------------------------------------------------------------------*/
+.option1 {
+	font-size: 10px;
+	color: #FFF;
+	background: #F00;
+	text-align: center;
+	display: block;
+	width: 120px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	-webkit-transform: rotate(-45deg) translate(-35px);
+	-ms-transform: rotate(-45deg) translate(-35px);
+	transform: rotate(-45deg) translate(-35px);
+}
+h2 span.option1 {
+	width: auto;
+	padding: 0px 5px;
+	position: static;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+	display: inline-block;
+}
+.option2 {
+	font-size: 10px;
+	color: #FFF;
+	background: #069;
+	text-align: center;
+	display: block;
+	width: 120px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	-webkit-transform: rotate(-45deg) translate(-35px);
+	-ms-transform: rotate(-45deg) translate(-35px);
+	transform: rotate(-45deg) translate(-35px);
+}
+h2 span.option2 {
+	width: auto;
+	padding: 0px 5px;
+	position: static;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+	display: inline-block;
+}
+
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;
+	color: #FFF;
+	font-size: 10px;
+	padding: 0px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+}
+
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {background: #333;color: #fff;padding: 5px 10px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px;}
+.mb20 {margin-bottom: 20px;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 15px;list-style: disc;}
+.color1, .color1 a {color: #ffcc1c;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+img.fr {float: right;margin-left: 10px;margin-bottom: 10px;}
+img.fl {float: left;margin-right: 10px;margin-bottom: 10px;}
+.big1 {font-size: 24px;letter-spacing: 0.2em;}
+.mini1 {font-size: 11px;}
+.sh {display: none;}
+
+
+
+/*画面幅800px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:800px){
+
+/*container（フッター以外のブロックを囲む一番外側のブロック）
+---------------------------------------------------------------------------*/
+#container {
+	width: auto;
+	margin: 10px 3%;
+}
+
+/*header（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+header {
+	padding: 10px 3%;
+}
+/*ロゴ画像*/
+#logo {
+	width: 80%;	/*幅を画面幅の80%にする設定*/
+}
+
+/*contents（main,subを囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	padding-top: 30px;	/*コンテンツ上に空ける余白*/
+}
+
+/*main,subコンテンツ
+---------------------------------------------------------------------------*/
+#main, #sub {
+	float: none;
+	width: auto;
+}
+
+/*サブコンテンツ内のメニュー
+---------------------------------------------------------------------------*/
+/*メニュー全体の設定*/
+.submenu {
+	margin-bottom: 0px;
+}
+/*スマホ用メニューを非表示から表示に切り替える*/
+#menubar-s {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 95px;
+	width: 95%;
+	margin-left: 2.5%;
+	background: #000;	/*背景色*/
+	background: rgba(0,0,0,0.9);	/*rgb指定での背景色。最後の小数点は透明度。*/
+}
+/*PC用メニューを非表示にする*/
+#menubar {
+	display: none;
+}
+
+/*３本バーアイコン設定
+---------------------------------------------------------------------------*/
+/*３本バーブロック*/
+#menubar_hdr {
+	display: block;
+	position: absolute;
+	top: 20px;		/*上から20pxの場所に配置*/
+	right: 3%;		/*右から3%の場所に配置*/
+	width: 30px;	/*幅*/
+	border: 3px solid #fff;	/*枠線の幅、線種、色*/
+	padding: 12px 10px 5px;	/*上、左右、下へのボックス内余白*/
+}
+/*３本のバー（1本あたり）*/
+#menubar_hdr span {
+	display: block;
+	border-top: 3px solid #fff;	/*枠線の幅、線種、色*/
+	margin-bottom: 7px;	/*バー同士の余白*/
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+section#new h2.open {
+	background: url(../images/btn_minus.png) no-repeat right center/34px 34px;
+}
+section#new h2.close {
+	background: url(../images/btn_plus.png) no-repeat right center/34px 34px;
+}
+
+/*フッターメニュー
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+#footermenu {
+	width: 90%;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+body.s-n #sub {
+	display: none;
+}
+
+}
+
+
+
+/*画面幅480px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
+
+/*header（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+#logo {
+	padding-top: 15px;
+}
+
+/*メインコンテンツ
+---------------------------------------------------------------------------*/
+/*mainコンテンツのh2タグの設定*/
+#main h2 {
+	font-size: 24px;
+}
+
+/*メインコンテンツ内のボックス（list）設定
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+#main .list {
+	float: none;
+	width: auto;
+	margin-left: 0;
+	height: auto;
+}
+#main .list a {
+	height: auto;
+}
+
+/*フッターメニュー
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+#footermenu {
+	display: none;
+}
+
+/*テーブル
+---------------------------------------------------------------------------*/
+/*テーブル内の左側*/
+.ta1 th {
+	width: 100px;
+	padding: 5px;
+}
+/*テーブル内の右側*/
+.ta1 td {
+	width: auto;
+	padding: 5px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.ws,.wl {width: 95%;}
+img.fr,img.fl {float: none;margin: 0;width: 100%;}
+.sh{display:block;}
+.pc{display:none;}
+
+}
+
+/*テキストエリアの装飾*/
+textarea {
+    border: 2px solid #000000;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+
+  }
+textarea:focus {
+    outline: none;
+    border-color: #000;
+    transition: 0.3s;
+    box-shadow: 0 0 8px 0 black
+
+}
+/*入力するとこの装飾*/
+input[type="text"] {
+    width: 100%;
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+
+  input[type="text"]:focus {
+    border-color: black;
+    box-shadow: 0 0 8px 0 black;
+  }
+
+  .inputWithIcon input[type="text"] {
+    padding-left: 10px;
+  }
+
+  .inputWithIcon {
+    position: relative;
+  }
+
+  .inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+  }
+
+  .inputWithIcon input[type="text"]:focus + i {
+    color: black;
+  }
+
+  .inputWithIcon.inputIconBg i {
+    background-color: #aaa;
+    color: #fff;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .inputWithIcon.inputIconBg input[type="text"]:focus + i {
+    color: #fff;
+    background-color: black;
+  }
+  /*--------------ポイント交換のボタン---------------*/
+  .btn{
+    width:100px;
+    height:40px;
+    line-height:40px;
+	display:inline-block;
+}
+.btn a{
+	width:100px;
+    height:40px;
+    text-decoration: none;
+    background:#FD6E6A;
+    text-align:center;
+    color:#FFFFFF;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:33px;
+    -webkit-border-radius:33px;
+    -moz-border-radius:33px;
+    box-shadow:5px 5px 0px 0px #DEDEDE ;
+    transition: all 0.3s ease;
+	border: none;
+	display: inline-flex;
+    justify-content: center;
+}
+.btn a:hover{
+    background:#FFFFFF;
+    color:#FD6E6A;
+    box-shadow:none;
+}
+
+input[type="submit"] {
+    width:100px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-decoration: none;
+    background:#FD6E6A;
+    color:#FFFFFF;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:33px;
+    -webkit-border-radius:33px;
+    -moz-border-radius:33px;
+    box-shadow:5px 5px 0px 0px #DEDEDE ;
+    transition: all 0.3s ease;
+    border: none;
+	display: inline-flex;
+    justify-content: center;
+}
+
+input[type="submit"]:hover {
+    background:#FFFFFF;
+    color:#FD6E6A;
+    box-shadow:none;
+}
